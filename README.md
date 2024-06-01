@@ -1,3 +1,23 @@
+This project is build with
+React and Redux
+
+I also used React Hook Form
+
+*Go to regular page to check all the uploaded memes.
+
+*Up or Downvote memes to see them on the hot page
+
+*The hottest memes get a star.
+
+*Upload your own meme on add mem page.
+
+-pick meme from your computer and give it a title. That's it!
+
+-It will appeare on regular page where you can vote on it :)
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

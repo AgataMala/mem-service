@@ -1,29 +1,25 @@
-import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 
 export const MemComponent = ({ mem }) => {
-  const [upvotes, setUpvotes] = useState(0);
-  const [downvotes, setDownvotes] = useState(0);
   const dispatch = useDispatch();
 
   const upvoteHandler = () => {
-    mem.upvotes += 1;
-    setUpvotes(upvotes + 1);
     if (mem.upvotes + mem.downvotes > 10) {
       mem.star = true;
     }
-    dispatch({ type: "UP-VOTE", payload: upvotes });
+    dispatch({ type: "UP-VOTE", payload: mem.id });
   };
   const downvoteHandler = () => {
-    mem.downvotes -= 1;
-    setDownvotes(downvotes - 1);
-    dispatch({ type: "DOWN-VOTE", payload: downvotes });
+    if (mem.upvotes + mem.downvotes > 10) {
+      mem.star = false;
+    }
+    dispatch({ type: "DOWN-VOTE", payload: mem.id });
   };
-  // <span className="fa fa-star checked"></span>
-  console.log(mem.star);
   return (
     <div className="mem-container">
-      {mem.star && <img className="star" src="/assets/star-svgrepo-com.svg" alt="star"/>}
+      {mem.star && (
+        <img className="star" src="/assets/star-svgrepo-com.svg" alt="star" />
+      )}
       <div className="img-wrapper">
         <img src={mem.img} alt={mem.title} />
       </div>
