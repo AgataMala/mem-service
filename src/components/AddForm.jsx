@@ -1,17 +1,15 @@
 import { useForm } from "react-hook-form";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 export const AddForm = () => {
   const form = useForm();
   const { register, handleSubmit, formState } = form;
   const dispatch = useDispatch();
   const { errors, isSubmitSuccessful } = formState;
-  const memes = useSelector((state) => state.allMemes)
 
   const onSubmit = (formdata) => {
     let uniqID = "id" + new Date().getTime();
 
-    console.log(uniqID);
     let newMem = {
       id: uniqID,
       title: formdata.title,

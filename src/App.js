@@ -15,6 +15,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/regular" element={<RegularPage />} />
+            <Route path="/" element={<RegularPage />} />
             <Route path="/hot" element={<HotPage />} />
             <Route path="/add" element={<AddMem />} />
             <Route path="/*" element={<ErrorPage />} />
